@@ -1,9 +1,11 @@
 package com.example.databasefile;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 
 import android.app.TimePickerDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,6 +15,9 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.example.databasefile.Database.CustomerDetails;
+import com.example.databasefile.Database.DAO;
+import com.example.databasefile.Database.MyDatabase;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.Calendar;
@@ -24,9 +29,10 @@ public class personal extends AppCompatActivity {
     Calendar calendar;
     int currentHour;
     int currentMin;
+    SharedPreferences sp;
+    SharedPreferences.Editor ed;
     String ampm;
-
-
+    String name,locality,city,pincode,timers,phoneno,altphoneno,emailid;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,38 +48,59 @@ public class personal extends AppCompatActivity {
         next=(Button)findViewById(R.id.Next);
         //Timer
         TimpePicker();
-        //GetValueFromUser
-        getValuerFromUser();
         //nextbut
         nextbut();
 
+        //string values
+        userPersonalDetails();
     }
-//Next Activity
+
+
+    //User Details
+    private void userPersonalDetails() {
+
+    }
+
+
+    //Next Activity
     private void nextbut() {
     next.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Intent details=new Intent(getApplicationContext(),personal_2.class);
-            startActivity(details);
-            finishActivity(1);
+
+
+
+                    //pass values
+            name=Name.getText().toString();
+            locality=Locality.getText().toString();
+            city=City.getText().toString();
+            pincode=Pincode.getText().toString();
+            timers=Timer.getText().toString();
+            phoneno=Phone.getText().toString();
+            altphoneno=AltPhone.getText().toString();
+            emailid=Email.getText().toString();
+            //Share Prefrence
+            sp=getSharedPreferences("DetailsKey",MODE_PRIVATE);
+            ed=sp.edit();
+            ed.putString("Name",name);
+            ed.putString("Locality",locality);
+            ed.putString("City",city);
+            ed.putString("Pincode",pincode);
+            ed.putString("Timer",timers);
+            ed.putString("Phone",phoneno);
+            ed.putString("AltPhone",altphoneno);
+            ed.putString("Email",emailid);
+            ed.apply();
+            Intent intent=new Intent(getApplicationContext(),personal_2.class);
+            startActivity(intent);
         }
     });
 
     }
 
 
-    //User InputFeild
-        private void getValuerFromUser(){
-//            String name = Name.getText().toString();
-//            String locality = Locality.getText().toString();
-//            String city = City.getText().toString();
-//            String pincode = Pincode.getText().toString();
-//            int phone = Integer.parseInt(Phone.getText().toString());
-//            int altphone = Integer.parseInt(AltPhone.getText().toString());
-//            String emailid= Email.getText().toString();
-        }
 
-        //TimePicker
+    //TimePicker
         private void TimpePicker () {
 
             Timer.setOnClickListener(new View.OnClickListener() {

@@ -27,9 +27,9 @@
         android:layout_marginLeft="20dp"
         android:textStyle="bold"
         android:id="@+id/configration"
-        android:textColor="@color/red"
+        android:textColor="@color/grey"
         />
-    <com.google.android.material.checkbox.MaterialCheckBox
+    <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/needtxt"
@@ -37,12 +37,11 @@
         android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
         android:text="1 BHK"
-        app:useMaterialThemeColors="true"
         android:id="@+id/one"
-        android:textColor="@color/red"
+        android:textColor="@color/grey"
         android:textStyle="bold"
         />
-    <com.google.android.material.checkbox.MaterialCheckBox
+    <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/needtxt"
@@ -51,10 +50,10 @@
         android:layout_marginLeft="5dp"
         android:text="2 BHK"
         android:id="@+id/two"
-        android:textColor="@color/red"
+        android:textColor="@color/grey"
         android:textStyle="bold"
         />
-    <com.google.android.material.checkbox.MaterialCheckBox
+    <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/needtxt"
@@ -62,18 +61,18 @@
         android:layout_marginTop="10dp"
         android:layout_marginLeft="5dp"
         android:text="3 BHK"
-        android:id="@+id/there"
-        android:textColor="@color/red"
+        android:id="@+id/three"
+        android:textColor="@color/grey"
         android:textStyle="bold"
         />
-    <com.google.android.material.checkbox.MaterialCheckBox
+    <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/one"
         android:layout_marginLeft="130dp"
         android:text="Other"
         android:id="@+id/other"
-        android:textColor="@color/red"
+        android:textColor="@color/grey"
         android:textStyle="bold"
         />
     <EditText
@@ -81,51 +80,38 @@
         android:layout_height="wrap_content"
         android:hint="Specify"
         android:paddingLeft="20dp"
-        android:textColorHint="@color/red"
+        android:textColorHint="@color/grey"
         android:id="@+id/specify"
         android:layout_below="@id/one"
         android:layout_toRightOf="@id/other"
         android:layout_marginLeft="10dp"
         />
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="370dp"
+        android:layout_height="55dp"
         android:layout_marginTop="20dp"
-        android:layout_below="@+id/other"
-        android:id="@+id/budgetLayout"
-        app:startIconDrawable="@drawable/ic_baseline_menu_book_24"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
-        >
-        <AutoCompleteTextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/budget"
-            android:hint="Budget"
-            android:inputType="none"
-            android:enabled="false"
-            />
-
-    </com.google.android.material.textfield.TextInputLayout>
+        android:layout_marginLeft="20dp"
+        android:layout_below="@+id/specify"
+        />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Home Loan :"
         android:textSize="16dp"
-        android:layout_below="@+id/budgetLayout"
+        android:layout_below="@+id/spinner"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
         android:textStyle="bold"
         android:id="@+id/loan"
-        android:textColor="@color/red"
+        android:textColor="@color/grey"
         />
     <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/loangroup"
-        android:layout_below="@id/budgetLayout"
+        android:layout_below="@id/spinner"
         android:layout_toRightOf="@id/loan"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
@@ -136,7 +122,7 @@
             android:id="@+id/approve"
             android:text="Approved"
             android:textStyle="bold"
-            android:textColor="@color/red"
+            android:textColor="@color/grey"
             />
         <RadioButton
             android:layout_width="wrap_content"
@@ -144,7 +130,7 @@
             android:id="@+id/noapprove"
             android:text="No Approved"
             android:textStyle="bold"
-            android:textColor="@color/red"
+            android:textColor="@color/grey"
             />
     </RadioGroup>
 
@@ -178,9 +164,9 @@
         android:layout_marginLeft="20dp"
         android:textStyle="bold"
         android:id="@+id/purchase"
-        android:textColor="@color/red"
+        android:textColor="@color/grey"
         />
-    <com.google.android.material.checkbox.MaterialCheckBox
+    <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/bankLayout"
@@ -189,10 +175,10 @@
         android:layout_marginLeft="5dp"
         android:text="Self-Use"
         android:id="@+id/selfuse"
-        android:textColor="@color/red"
+        android:textColor="@color/grey"
         android:textStyle="bold"
         />
-    <com.google.android.material.checkbox.MaterialCheckBox
+    <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/bankLayout"
@@ -201,10 +187,10 @@
         android:layout_marginLeft="5dp"
         android:text="Investment"
         android:id="@+id/investment"
-        android:textColor="@color/red"
+        android:textColor="@color/grey"
         android:textStyle="bold"
         />
-    <com.google.android.material.checkbox.MaterialCheckBox
+    <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/purchase"
@@ -212,7 +198,7 @@
         android:layout_marginLeft="175dp"
         android:text="Second Home"
         android:id="@+id/secondhome"
-        android:textColor="@color/red"
+        android:textColor="@color/grey"
         android:textStyle="bold"
         />
     <TextView
@@ -225,7 +211,7 @@
         android:layout_marginLeft="20dp"
         android:textStyle="bold"
         android:id="@+id/residental"
-        android:textColor="@color/red"
+        android:textColor="@color/grey"
         />
     <RadioGroup
         android:layout_width="wrap_content"
@@ -242,7 +228,7 @@
             android:id="@+id/owned"
             android:text="Owned"
             android:textStyle="bold"
-            android:textColor="@color/red"
+            android:textColor="@color/grey"
             />
         <RadioButton
             android:layout_width="wrap_content"
@@ -250,9 +236,10 @@
             android:id="@+id/rent"
             android:text="Rented"
             android:textStyle="bold"
-            android:textColor="@color/red"
+            android:textColor="@color/grey"
             />
     </RadioGroup>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="65dp"

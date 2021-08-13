@@ -35,31 +35,20 @@
     <com.google.android.material.textfield.TextInputEditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/Name"
+        android:id="@+id/education"
         android:hint="Education"
         />
   </com.google.android.material.textfield.TextInputLayout>
-  <com.google.android.material.textfield.TextInputLayout
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_marginStart="20dp"
-      android:layout_marginEnd="20dp"
+  <Spinner
+      android:id="@+id/spinner"
+      android:layout_width="370dp"
+      android:layout_height="55dp"
       android:layout_marginTop="20dp"
-      android:layout_below="@+id/eduLayout"
-      android:id="@+id/OccupLayout"
-      app:startIconDrawable="@drawable/ic_baseline_menu_book_24"
-      style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
-      >
-    <AutoCompleteTextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/occupation"
-        android:hint="Occupation"
-        android:inputType="none"
-        android:enabled="false"
-        />
+      android:layout_marginLeft="20dp"
+  android:layout_below="@+id/eduLayout"
+  />
 
-  </com.google.android.material.textfield.TextInputLayout>
+
   <com.google.android.material.textfield.TextInputLayout
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
@@ -67,7 +56,7 @@
       android:layout_marginRight="20dp"
       android:layout_marginTop="20dp"
       android:id="@+id/CompanyLayout"
-      android:layout_below="@+id/OccupLayout"
+      android:layout_below="@+id/spinner"
       style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
       app:startIconDrawable="@drawable/ic_baseline_location_city_24"
       app:endIconMode="clear_text"
@@ -140,7 +129,8 @@
         android:hint="Business Location"
         />
   </com.google.android.material.textfield.TextInputLayout>
- <RelativeLayout
+
+  <RelativeLayout
      android:layout_width="match_parent"
      android:layout_height="65dp"
      android:background="@color/red"
